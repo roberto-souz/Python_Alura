@@ -16,14 +16,14 @@ size = width, height = 640, 320
 playSurface = pygame.display.set_mode(size)
 pygame.display.set_caption("Snake Game")
 
-# Colors
+# Cores
 red = pygame.Color(255, 0, 0)
 green = pygame.Color(0, 255, 0)
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 brown = pygame.Color(165, 42, 42)
 
-# FPS controller
+# FPS Controles
 fpsController = pygame.time.Clock()
 
 # Game settings
@@ -51,7 +51,7 @@ def gameOver():
     sys.exit()
 
 
-# Show Score
+# Mostrar Score
 def showScore(choice=1):
     SFont = pygame.font.SysFont('monaco', 32)
     Ssurf = SFont.render("Score  :  {0}".format(score), True, black)
@@ -80,7 +80,7 @@ while True:
             if event.key == pygame.K_ESCAPE:
                 pygame.event.post(pygame.event.Event(pygame.QUIT))
 
-    # Validate direction
+    # Validar direção
     if changeto == 'RIGHT' and direction != 'LEFT':
         direction = changeto
     if changeto == 'LEFT' and direction != 'RIGHT':
@@ -90,7 +90,7 @@ while True:
     if changeto == 'DOWN' and direction != 'UP':
         direction = changeto
 
-    # Update snake position
+    # Atualizar posição da cobrinha
     if direction == 'RIGHT':
         snakePos[0] += delta
     if direction == 'LEFT':
